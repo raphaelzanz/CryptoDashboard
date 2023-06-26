@@ -1,0 +1,18 @@
+{
+    "github": {
+        "clientId": "",
+        "secret": ""
+    },
+    "mysql": {
+        "host": "",
+        "user": "",
+        "password": "",
+        "database": "",
+        "port": ""
+    },
+    "mongo": {
+        "host": "",
+        "port": "",
+        "db": ""
+    }
+}
