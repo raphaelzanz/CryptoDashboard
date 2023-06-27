@@ -4,8 +4,8 @@
         "port": 3000
     },
     "github": {
-        "clientId": "",
-        "secret": ""
+        "clientId": "7b60dd40370d0afba277",
+        "secret": "07ec0705c784e7a41ad83cdea59ff686410512ef"
     },
     "mysql": {
         "host": "localhost",
