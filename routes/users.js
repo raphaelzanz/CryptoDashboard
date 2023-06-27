@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const inputValidator=require('../middlewares/joiMiddleware');
+const db = require('../middlewares/db-connect');
+//const dbConnection = require("../data/connect");
 const {
-    addUser
-} = require('../controllers/userController')
+    addUserSymbol
+} = require('../controllers/userController');
+
 const {
     symbolValidator,
     userValidator
@@ -25,17 +28,8 @@ router.get('/logout',(req,res)=>{
 
 })
 
-//the symbol will be as req.query? as req.params? in the req.body?
-router.post('/symbol',inputValidator(symbolValidator), (req,res)=>{
-    console.log("POST /symbol route", req.body)
-    res.status(200).send(req.body)
-})
+router.post('/symbol',inputValidator(symbolValidator),db, addUserSymbol)
 
-router.post('/user', inputValidator(userValidator), addUser)
-// router.post('/user', inputValidator(userValidator), (req,res)=>{
-//     //console.log("POST /user route", req.body);
-//     //res.status(200).send(req.body)
-// })
 
 module.exports = router;
 

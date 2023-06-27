@@ -8,6 +8,7 @@ const guestsRouter = require('./routes/guests')
 const usersRouter = require('./routes/users');
 const githubRouter = require('./routes/github');
 
+//const db = require('./middlewares/db-connect');
 
 const pageNotFound = require('./middlewares/404')
 const error = require('./middlewares/error');
@@ -20,6 +21,11 @@ app.use(express.json());
 
 const port = 3000;
 const host = 'localhost';
+
+
+// console.log("trying to connect to the db...");
+// db.connect();
+
 
 
 app.use('/', guestsRouter);
