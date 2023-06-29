@@ -1,21 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../middlewares/auth');
 
 
-
-// /-> will auth to the githun account
-router.get("/", (req,res)=>{
-
-})
-
-router.get('/callback', (req,res) =>{
-
-})
-
-// /callback -> will use to pass auth data
-
-
-
+router.get('/', auth.authenticate('github', { scope: [ 'user:email' ] })); 
+router.get('/callback', auth.authenticate('github', { failureRedirect: '/users/welcome', successRedirect: '/users/dashboard' }))
 
 module.exports = router;
-

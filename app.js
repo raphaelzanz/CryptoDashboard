@@ -9,6 +9,7 @@ const usersRouter = require('./routes/users');
 const githubRouter = require('./routes/github');
 
 //const db = require('./middlewares/db-connect');
+const db = require('./middlewares/db-connect');
 
 const pageNotFound = require('./middlewares/404')
 const error = require('./middlewares/error');
@@ -24,7 +25,7 @@ const host = 'localhost';
 
 
 // console.log("trying to connect to the db...");
-// db.connect();
+ //db.connect();
 
 
 

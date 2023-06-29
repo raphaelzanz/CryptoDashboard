@@ -4,6 +4,7 @@ const inputValidator=require('../middlewares/joiMiddleware');
 const db = require('../middlewares/db-connect');
 //const dbConnection = require("../data/connect");
 const {
+    welcome,
     addUserSymbol
 } = require('../controllers/userController');
 
@@ -12,10 +13,12 @@ const {
     userValidator
 } = require('../controllers/validatorsController');
 
-router.get('/welcome', (req,res)=>{
-    console.log("/welcome route")
-    res.status(200).send("Welcome")
-})
+// router.get('/welcome', (req,res)=>{
+//     console.log("/welcome route")
+//     res.status(200).send("Welcome")
+// })
+
+router.get('/welcome', welcome);
 
 router.get('/dashboard', (req,res)=>{
     console.log("/dashboard route")

@@ -1,4 +1,4 @@
-const UserModel = require("../models/user-model");
+const UserModel = require("../models/user-symbol");
 
 
 const addUserSymbol = (req,res,next) => {
@@ -15,6 +15,14 @@ const addUserSymbol = (req,res,next) => {
     res.status(200).send(req.body);
 }
 
+const welcome = (req,res,next) => {
+    res.send("Welcome user")
+
+}
+
+
+
 module.exports = {
     addUserSymbol,
+    welcome,
 }

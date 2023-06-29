@@ -1,12 +1,18 @@
 const mysql = require('mysql2');
 const util = require('util');
 const config = require('config');
-    const connection = mysql.createConnection({
-        host: config.get('mysql.host'),
-        user: config.get('mysql.user'),
-        password: config.get('mysql.password'),
-        database: config.get('mysql.database'),
-        port: config.get('mysql.port')
+    
+const connection = mysql.createConnection({
+        // host: config.get('mysql.host'),
+        // user: config.get('mysql.user'),
+        // password: config.get('mysql.password'),
+        // database: config.get('mysql.database'),
+        // port: config.get('mysql.port')
+        host: "localhost",
+        user: "username",
+        password: "password",
+        database: "mydb",
+        port: 3306
     });
     
     connection.connect = util.promisify(connection.connect);
@@ -14,9 +20,7 @@ const config = require('config');
 
 
 // module.exports = (connection) => async (req,res,next) => {
-    module.exports =  async (req,res,next) => {
-
-    
+module.exports =  async (req,res,next) => {
     try{
         //await db.connect();
         req.db = connection;
